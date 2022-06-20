@@ -25,34 +25,6 @@ class WallServiceTest {
                 donut = Donut(editMode = DonutEditMode.DURATION)
             )
         )
-
-//        val postTwo = service.add(
-//            Post(
-//                id = 2,
-//                date = LocalDateTime.now(),
-//                comments = Comments(count = 45, canOpen = false),
-//                copyright = Copyright(id = 100000, "Author5 link", "Author5 name", "for post 5"),
-//                likes = Likes(count = 6, canLike = false),
-//                reposts = Reposts(count = 100),
-//                views = Views(count = 78),
-//                postType = PostType.COPY,
-//                donut = Donut(editMode = DonutEditMode.ALL)
-//            )
-//        )
-
-//        val postThree = service.add(
-//            Post(
-//                id = 3,
-//                date = LocalDateTime.now(),
-//                comments = Comments(count = 1, canClose = false),
-//                copyright = Copyright(id = 123, "Author98 link", "Author98 name", "for post 98"),
-//                likes = Likes(count = 134, canPublish = false),
-//                reposts = Reposts(count = 50),
-//                views = Views(count = 459),
-//                postType = PostType.SUGGEST,
-//                donut = Donut(editMode = DonutEditMode.DURATION)
-//            )
-//        )
         assertTrue(postOne.id != 0)
 
     }
