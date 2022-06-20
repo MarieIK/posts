@@ -1,0 +1,1 @@
+data class Placeholder(val someText: String = "Some placeholder")
