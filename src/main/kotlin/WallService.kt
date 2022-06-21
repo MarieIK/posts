@@ -7,7 +7,7 @@ class WallService {
     }
 
     fun add(post: Post): Post {
-        posts += post.copy(getId())
+        posts += post.copy(id = getId())
         return posts.last()
     }
 

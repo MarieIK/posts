@@ -1,6 +1,8 @@
 val firstPost = Post(
     id = 1,
     ownerId = 47,
+    comments = Comments(count = 5),
+    copyright = Copyright(id = 86, "Author link"),
     likes = Likes(count = 34, userLikes = false),
     reposts = Reposts(count = 130),
     views = Views(count = 900),

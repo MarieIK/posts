@@ -10,7 +10,7 @@ data class Post(
     val likes: Likes = Likes(),
     val reposts: Reposts? = null,
     val views: Views = Views(),
-    val postType: PostType,
+    val postType: PostType = PostType.SUGGEST,
 )
 
 data class Comments(
