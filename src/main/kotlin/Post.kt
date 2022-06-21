@@ -10,7 +10,7 @@ data class Post(
     val likes: Likes = Likes(),
     val reposts: Reposts? = null,
     val views: Views = Views(),
-    val postType: PostType,
+    val postType: PostType = PostType.POSTPONE,
 )
 
 data class Comments(
@@ -37,6 +37,5 @@ data class Views(var count: Long = 150)
 
 enum class PostType {
     COPY,
-    POSTPONE,
-    SUGGEST
+    POSTPONE
 }
