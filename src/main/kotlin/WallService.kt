@@ -21,4 +21,10 @@ class WallService {
         return false
     }
 
+    fun printWallService() {
+        for (wallService in posts) {
+            println(wallService)
+        }
+    }
+
 }
