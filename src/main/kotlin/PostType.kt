@@ -1,7 +1,7 @@
-enum class PostType {
-    POST,
-    COPY,
-    REPLY,
-    POSTPONE,
-    SUGGEST
-}
+//enum class PostType {
+//    POST,
+//    COPY,
+//    REPLY,
+//    POSTPONE,
+//    SUGGEST
+//}

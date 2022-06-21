@@ -1,11 +1,8 @@
-import java.time.LocalDateTime
-
 val firstPost = Post(
     id = 1,
     ownerId = 47,
     fromId = 90,
-    date = LocalDateTime.now(),
-    text = "Some text Post 1",
+    //text = "Some text Post 1",
     comments = Comments(count = 5, canClose = false, canOpen = false),
     copyright = Copyright(id = 86, "Author link", "Author name", "for post 1"),
     likes = Likes(count = 34, userLikes = false),
@@ -21,7 +18,6 @@ val secondPost = Post(
     id = 2,
     ownerId = 901,
     fromId = 478,
-    date = LocalDateTime.now(),
     text = "Some text Post 2",
     comments = Comments(count = 3, canOpen = false),
     copyright = Copyright(id = 19087, "Author2 link", "Author2 name", "for post 2"),
@@ -41,7 +37,7 @@ fun main() {
     wallService.add(firstPost)
     wallService.add(secondPost)
 
-    wallService.posts.forEach { println(it) }
+    wallService.printWallService()
 
     println(wallService.update(secondPost))
     println(wallService.update(thirdPost))
