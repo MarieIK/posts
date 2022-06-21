@@ -7,7 +7,6 @@ data class Audio(
     val url: String,
     val lyricsId: Int? = null,
     val albumId: Int,
-    val genreId: Int? = null,
     val date: LocalDateTime = LocalDateTime.now(),
     val noSearch: Boolean,
     val isHq: Boolean

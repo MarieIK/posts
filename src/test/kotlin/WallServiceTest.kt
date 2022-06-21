@@ -9,7 +9,6 @@ class WallServiceTest {
         val service = WallService()
         val postOne = service.add(Post())
         assertTrue(postOne.id != 0)
-
     }
 
     @Test
