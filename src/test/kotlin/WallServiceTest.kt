@@ -1,7 +1,6 @@
 import org.junit.Test
 
 import org.junit.Assert.*
-import java.time.LocalDateTime
 
 class WallServiceTest {
 
@@ -10,19 +9,7 @@ class WallServiceTest {
         val service = WallService()
         val postOne = service.add(
             Post(
-                //ownerId = 901,
-                //fromId = 478,
-                //date = LocalDateTime.now(),
-                //text = "Some text Post Test",
-                //comments = Comments(),
-                //copyright = Copyright(),
-                //likes = Likes(),
-                //reposts = Reposts(),
-                //views = Views(),
-                postType = PostType.POSTPONE,
-                //canPin = false,
-                //canEdit = false,
-                donut = Donut(editMode = DonutEditMode.DURATION)
+                postType = PostType.POSTPONE
             )
         )
         assertTrue(postOne.id != 0)
@@ -34,64 +21,24 @@ class WallServiceTest {
         val service = WallService()
         service.add(
             Post(
-                //id = 1,
-                //ownerId = 901,
-                //fromId = 478,
-                //date = LocalDateTime.now(),
-                //text = "Some text Post Test",
-                //comments = Comments(),
-                //copyright = Copyright(),
-                //likes = Likes(),
-                //reposts = Reposts(),
-                //views = Views(),
-                postType = PostType.POSTPONE,
-                //canPin = false,
-                //canEdit = false,
-                donut = Donut(editMode = DonutEditMode.DURATION)
+                postType = PostType.POSTPONE
             )
         )
 
         service.add(
             Post(
-                //date = LocalDateTime.now(),
-                //comments = Comments(),
-                //copyright = Copyright(),
-                //likes = Likes(),
-                //reposts = Reposts(),
-                //views = Views(),
-                postType = PostType.COPY,
-                donut = Donut(editMode = DonutEditMode.ALL)
+                postType = PostType.COPY
             )
         )
 
         service.add(
             Post(
-                //date = LocalDateTime.now(),
-                //comments = Comments(),
-                //copyright = Copyright(),
-                //likes = Likes(),
-                //reposts = Reposts(),
-                //views = Views(),
-                postType = PostType.SUGGEST,
-                donut = Donut(editMode = DonutEditMode.DURATION)
+                postType = PostType.SUGGEST
             )
         )
 
         val update = Post(
-            id = 1,
-            //ownerId = 901,
-            //fromId = 478,
-            //date = LocalDateTime.now(),
-            //text = "Some text Post Test",
-            //comments = Comments(),
-            //copyright = Copyright(),
-            //likes = Likes(),
-            //reposts = Reposts(),
-            //views = Views(),
-            postType = PostType.POSTPONE,
-            //canPin = false,
-            //canEdit = false,
-            donut = Donut(editMode = DonutEditMode.DURATION)
+            id = 1, postType = PostType.COPY
         )
 
         val result = service.update(update)
@@ -104,64 +51,24 @@ class WallServiceTest {
         val service = WallService()
         service.add(
             Post(
-                //id = 1,
-                //ownerId = 901,
-                //fromId = 478,
-                //date = LocalDateTime.now(),
-                //text = "Some text Post Test",
-                //comments = Comments(),
-                //copyright = Copyright(),
-                //likes = Likes(),
-                //reposts = Reposts(),
-                //views = Views(),
-                postType = PostType.POSTPONE,
-                //canPin = false,
-                //canEdit = false,
-                donut = Donut(editMode = DonutEditMode.DURATION)
+                postType = PostType.POSTPONE
             )
         )
 
         service.add(
             Post(
-                //date = LocalDateTime.now(),
-                //comments = Comments(),
-                //copyright = Copyright(),
-                //likes = Likes(),
-                //reposts = Reposts(),
-                //views = Views(),
-                postType = PostType.COPY,
-                donut = Donut(editMode = DonutEditMode.ALL)
+                postType = PostType.COPY
             )
         )
 
         service.add(
             Post(
-                //date = LocalDateTime.now(),
-                //comments = Comments(),
-                //copyright = Copyright(),
-                //likes = Likes(),
-                //reposts = Reposts(),
-                //views = Views(),
-                postType = PostType.SUGGEST,
-                donut = Donut(editMode = DonutEditMode.DURATION)
+                postType = PostType.SUGGEST
             )
         )
 
         val update = Post(
-            id = 8,
-            //ownerId = 901,
-            //fromId = 478,
-            //date = LocalDateTime.now(),
-            //text = "Some text Post Test",
-            //comments = Comments(),
-            //copyright = Copyright(),
-            //likes = Likes(),
-            //reposts = Reposts(),
-            //views = Views(),
-            postType = PostType.POSTPONE,
-            //canPin = false,
-            //canEdit = false,
-            donut = Donut(editMode = DonutEditMode.DURATION)
+            id = 8, postType = PostType.SUGGEST
         )
 
         val result = service.update(update)
