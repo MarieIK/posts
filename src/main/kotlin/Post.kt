@@ -11,6 +11,7 @@ data class Post(
     val reposts: Reposts? = null,
     val views: Views = Views(),
     val postType: PostType = PostType.SUGGEST,
+    val attachment: Array<Attachment> = emptyArray()
 )
 
 data class Comments(

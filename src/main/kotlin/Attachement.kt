@@ -1,24 +1,31 @@
 import java.time.LocalDateTime
 
+interface Attachment {
+    val type: String
+}
+
+class AudioAttachment(
+    override val type: String = "audio", val audio: Audio
+) : Attachment
+
 data class Audio(
     val id: Long,
     val artist: String,
-    val duration: Long,
     val url: String,
     val lyricsId: Int? = null,
-    val albumId: Int,
     val date: LocalDateTime = LocalDateTime.now(),
     val noSearch: Boolean,
-    val isHq: Boolean
 )
+
+class DocumentAttachment(
+    override val type: String = "document", val document: Document
+) : Attachment
 
 data class Document(
     val id: Long,
-    val ownerId: Long,
     val title: String,
     val size: Long,
     val ext: String? = null,
-    val url: String,
     val date: LocalDateTime = LocalDateTime.now(),
     var type: Int,
     val preview: Preview? = null
@@ -30,6 +37,10 @@ data class Document(
         return types[type]
     }
 }
+
+class PreviewAttachment(
+    override val type: String = "preview", val document: Preview
+) : Attachment
 
 data class Preview(
     val photo: PhotoPreview, val graffiti: GraffitiPreview, val audioMessage: AudioMessagePreview
@@ -62,16 +73,21 @@ data class AudioMessagePreview(
     val duration: Long,
 )
 
+class PhotoAttachment(
+    override val type: String = "photo", val document: Photo
+) : Attachment
+
 data class Photo(
     val id: Long,
     val albumId: Long,
-    val ownerId: Long,
-    val userId: Long,
     val text: String? = null,
     val date: LocalDateTime = LocalDateTime.now(),
     val width: Int?,
-    val height: Int
 )
+
+class VideoAttachment(
+    override val type: String = "video", val document: Video
+) : Attachment
 
 data class Video(
     val id: Long,
