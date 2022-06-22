@@ -1,33 +1,33 @@
 import java.time.LocalDateTime
 
 interface Attachment {
-    val type: String
+    val type: String?
 }
 
 class AudioAttachment(
-    override val type: String = "audio", val audio: Audio
+    override val type: String? = "audio", val audio: Audio
 ) : Attachment
 
 data class Audio(
-    val id: Long,
-    val artist: String,
-    val url: String,
+    val id: Long?,
+    val artist: String?,
+    val url: String?,
     val lyricsId: Int? = null,
     val date: LocalDateTime = LocalDateTime.now(),
-    val noSearch: Boolean,
+    val noSearch: Boolean?,
 )
 
 class DocumentAttachment(
-    override val type: String = "document", val document: Document
+    override val type: String? = "document", val document: Document
 ) : Attachment
 
 data class Document(
-    val id: Long,
-    val title: String,
-    val size: Long,
+    val id: Long?,
+    val title: String?,
+    val size: Long?,
     val ext: String? = null,
     val date: LocalDateTime = LocalDateTime.now(),
-    var type: Int,
+    var type: Int?,
     val preview: Preview? = null
 ) {
     fun typeDocument(type: Int): String {
@@ -39,11 +39,11 @@ data class Document(
 }
 
 class PreviewAttachment(
-    override val type: String = "preview", val document: Preview
+    override val type: String? = "preview", val document: Preview?
 ) : Attachment
 
 data class Preview(
-    val photo: PhotoPreview, val graffiti: GraffitiPreview, val audioMessage: AudioMessagePreview
+    val photo: PhotoPreview?, val graffiti: GraffitiPreview?, val audioMessage: AudioMessagePreview?
 )
 
 data class PhotoPreview(
@@ -66,32 +66,32 @@ data class PhotoPreview(
 }
 
 data class GraffitiPreview(
-    val src: String, val width: Int, val height: Int
+    val src: String?, val width: Int?, val height: Int?
 )
 
 data class AudioMessagePreview(
-    val duration: Long,
+    val duration: Long?,
 )
 
 class PhotoAttachment(
-    override val type: String = "photo", val document: Photo
+    override val type: String? = "photo", val document: Photo
 ) : Attachment
 
 data class Photo(
-    val id: Long,
-    val albumId: Long,
+    val id: Long?,
+    val albumId: Long?,
     val text: String? = null,
     val date: LocalDateTime = LocalDateTime.now(),
     val width: Int?,
 )
 
 class VideoAttachment(
-    override val type: String = "video", val document: Video
+    override val type: String? = "video", val document: Video
 ) : Attachment
 
 data class Video(
-    val id: Long,
-    val description: String,
+    val id: Long?,
+    val description: String?,
     val date: LocalDateTime = LocalDateTime.now().minusMonths(1),
     val addingDate: LocalDateTime = LocalDateTime.now().minusHours(1),
 )

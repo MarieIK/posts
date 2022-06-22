@@ -32,5 +32,4 @@ fun main() {
 
     println(wallService.update(secondPost))
     println(wallService.update(thirdPost))
-
 }

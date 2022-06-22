@@ -1,6 +1,7 @@
 class WallService {
     private var posts = emptyArray<Post>()
     private var idCount: Long = 0
+    private var comments = emptyArray<NewComment>()
 
     private fun getId(): Long {
         return ++idCount
@@ -25,5 +26,16 @@ class WallService {
         for (wallService in posts) {
             println(wallService)
         }
+    }
+
+    fun createComment(postId: Long, newComment: NewComment): NewComment {
+        for (post in posts) {
+            if (post.id == postId) {
+                comments += newComment
+            }
+        }
+        return if (comments.contains(newComment)) {
+            comments.last()
+        } else throw PostNotFoundException("Невозможно оставить комментарий. Поста с ID: $postId не существует")
     }
 }
