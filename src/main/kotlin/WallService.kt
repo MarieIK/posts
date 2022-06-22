@@ -1,8 +1,8 @@
 class WallService {
-    var posts = emptyArray<Post>()
+    private var posts = emptyArray<Post>()
+    private var idCount: Long = 0
 
-    private var idCount: Int = 0
-    private fun getId(): Int {
+    private fun getId(): Long {
         return ++idCount
     }
 
@@ -26,5 +26,4 @@ class WallService {
             println(wallService)
         }
     }
-
 }

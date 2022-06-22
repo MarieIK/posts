@@ -8,7 +8,7 @@ class WallServiceTest {
     fun add() {
         val service = WallService()
         val postOne = service.add(Post())
-        assertTrue(postOne.id != 0)
+        assertTrue(postOne.id != 0L)
     }
 
     @Test
